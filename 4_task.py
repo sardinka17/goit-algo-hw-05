@@ -31,7 +31,7 @@ def add_contact(args: list[str]):
     name, phone = args
 
     if name in contacts_dict.keys():
-        print(f"{name} already exists. It will be overwritten.")
+        return f"{name} already exists. Please choose a different name."
 
     contacts_dict[name] = phone
 
@@ -41,6 +41,10 @@ def add_contact(args: list[str]):
 @input_error
 def change_phone(args: list[str]):
     name, phone = args
+
+    if name not in contacts_dict.keys():
+        return f"{name} doesn't exists. Add it before changing it."
+
     contacts_dict[name] = phone
 
     return "Contact updated."

@@ -2,7 +2,7 @@ import re
 
 
 def generator_numbers(text: str):
-    pattern = r"[-+]?(?:\d*\.*\d+)"
+    pattern = r" [-+]?(?:\d*\.*\d+) "
     salaries = re.findall(pattern, text)
 
     for salary in salaries:
